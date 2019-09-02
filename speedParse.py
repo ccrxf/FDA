@@ -19,7 +19,7 @@ for xmlFile in files:
             ErrorFiles.append(xmlFile)
 
 for ErrorFile in ErrorFiles:
-    dst = root_dir + '/errordata/' +ErrorFile
+    dst = month_dir + '/errordata/' +ErrorFile
     os.rename(ErrorFile, dst)
 '''
 

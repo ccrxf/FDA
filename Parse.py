@@ -5,7 +5,7 @@ import numpy as np
 root_dir = 'C:/Users/ccrxf/PycharmProjects/FDA/07/18'
 files = os.listdir(root_dir)
 os.chdir(root_dir)  # change the current working directory to path.
-speedData = [[], [], [], []]
+detectorData = [[], [], [], []]
 ErrorFiles = []
 
 for xmlFile in files:
@@ -40,10 +40,10 @@ for xmlFile in files:
                                 laneOccupancy = lane.getElementsByTagName('lane-Occupancy')
                                 laneSpeed = lane.getElementsByTagName('lane-Speed')
                                 if laneVolume.length >= 0 and laneOccupancy.length >= 0 and laneSpeed.length >= 0:
-                                    speedData[0].append(time.childNodes[0].data)
-                                    speedData[1].append(laneVolume[0].childNodes[0].data)
-                                    speedData[2].append(laneOccupancy[0].childNodes[0].data)
-                                    speedData[3].append(laneSpeed[0].childNodes[0].data)
+                                    detectorData[0].append(time.childNodes[0].data)
+                                    detectorData[1].append(laneVolume[0].childNodes[0].data)
+                                    detectorData[2].append(laneOccupancy[0].childNodes[0].data)
+                                    detectorData[3].append(laneSpeed[0].childNodes[0].data)
         except IndexError:
             continue
 
